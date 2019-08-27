@@ -1,4 +1,4 @@
-# Rainforest Miner for Android
+# TDCoin Miner for Android
 
 This is an Android miner with some minial changes to the UI that is built from BitZeny Miner for Android based on [cpuminer](https://github.com/bitzeny/cpuminer). Cpuminer is modifed to work as a library through JNI.
 
