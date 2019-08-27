@@ -103,13 +103,15 @@ struct workio_cmd {
 };
 
 enum algos {
-	ALGO_RAINFOREST,
 	ALGO_SHA256D,		/* SHA-256d */
+	ALGO_SCRYPT,		/* SCRYPT */
+	ALGO_RAINFOREST,
 };
 
 static const char *algo_names[] = {
-	[ALGO_RAINFOREST]	= "rainforest",
 	[ALGO_SHA256D]		= "sha256d",
+	[ALGO_SCRYPT]		= "scrypt",
+	[ALGO_RAINFOREST]	= "rainforest",
 };
 
 bool opt_debug = true;
@@ -128,7 +130,7 @@ static int opt_retries = -1;
 static int opt_fail_pause = 30;
 int opt_timeout = 0;
 static int opt_scantime = 5;
-static enum algos opt_algo = ALGO_RAINFOREST;
+static enum algos opt_algo = ALGO_SHA256D;
 static int opt_scrypt_n = 1024;
 static int opt_n_threads;
 static int num_processors;
@@ -137,7 +139,7 @@ static char *rpc_userpass;
 static char *rpc_user, *rpc_pass;
 static int pk_script_size;
 static unsigned char pk_script[25];
-static char coinbase_sig[101] = "";
+static char coinbase_sig[101] = "TDCOINCORE";
 char *opt_cert;
 char *opt_proxy;
 long opt_proxy_type;
@@ -1440,6 +1442,7 @@ int start(const char *url, const char *user, const char *pass, const int n_threa
 
 	opt_n_threads = n_threads ? n_threads : num_processors;
     opt_algo = algo;
+	applog(LOG_INFO, "running with algorithm: %d", algo);
 
 	pthread_mutex_lock(&run_lock);
     if (is_running()) {

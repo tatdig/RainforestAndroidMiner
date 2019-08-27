@@ -26,7 +26,7 @@
 //
 // Note: always use the same options to build all files!
 //
-
+#define RF_NOASM
 #include <stdint.h>
 #include <string.h>
 #include <stdlib.h>
