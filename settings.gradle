@@ -1,1 +1,1 @@
-include ':app', ':bitzenymininglibrary'
+include ':app', ':tdcoinmininglibrary'
