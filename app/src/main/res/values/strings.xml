@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">RainforestMiner</string>
+    <string name="app_name">TDCoin Miner</string>
     <string-array name="algorithms">
-        <item>rainforest</item>
         <item>sha256d</item>
+        <item>scrypt</item>
     </string-array>
 </resources>

@@ -5,32 +5,72 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.ottylab.bitzenyminer.MainActivity">
+    tools:context="org.tdcoincore.tdcoinminer.MainActivity">
 
-    <EditText
-        android:id="@+id/editTextServer"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="Stratum Host (stratum+tcp://example.com:1234)"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="38dp">
+
+        <TextView
+            android:id="@+id/textServer"
+            android:layout_width="280sp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="9dp"
+            android:contentDescription="Server address"
+            android:text="stratum+tcp://pool.tdcoincore.org"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textViewColon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewColon"
+            android:layout_width="5dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="9dp"
+            android:text=":"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textPort"
+            app:layout_constraintStart_toEndOf="@+id/textServer"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textPort"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="9dp"
+            android:text="8334"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewColon"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
 
     <EditText
         android:id="@+id/editTextUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
-        android:hint="Address (Bhg3BKWrqAJveyZS9fNurZqGV3TRc4RgwH)"
+        android:hint="Address (TCyfmdV7aaBwFK4tVXypSX3FqG3dmSSqac.android)"
         android:inputType="textPersonName"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextServer" />
@@ -39,12 +79,13 @@
         android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="Password (for exampe 'x')"
         android:inputType="textPersonName"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextUser" />
@@ -53,48 +94,60 @@
         android:id="@+id/editTextNThreads"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="Threads (auto: 0 or empty)"
         android:inputType="number"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal">
+        android:layout_height="71dp">
 
         <Button
             android:id="@+id/buttonDrive"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="8dp"
             android:text="Start"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/checkBoxBenchmark"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <CheckBox
             android:id="@+id/checkBoxBenchmark"
-            android:layout_width="106dp"
-            android:layout_height="44dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="24dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:text="Benchmark"
-            app:layout_constraintLeft_toRightOf="@+id/editTextNThreads"
-            app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/spinnerAlgorithm"
+            app:layout_constraintStart_toEndOf="@+id/buttonDrive"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.458" />
 
         <Spinner
             android:id="@+id/spinnerAlgorithm"
-            android:layout_width="116dp"
-            android:layout_height="44dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="24dp" />
-    </LinearLayout>
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/checkBoxBenchmark"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
 
     <TextView
         android:id="@+id/textViewLog"
@@ -108,4 +161,5 @@
         android:ellipsize="marquee"
         android:gravity="bottom"
         android:scrollbars="vertical" />
+
 </LinearLayout>
