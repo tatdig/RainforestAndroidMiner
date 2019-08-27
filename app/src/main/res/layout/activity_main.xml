@@ -8,6 +8,7 @@
     tools:context="org.tdcoincore.tdcoinminer.MainActivity">
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_server"
         android:layout_width="match_parent"
         android:layout_height="38dp">
 
@@ -18,8 +19,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="9dp"
-            android:contentDescription="Server address"
-            android:text="stratum+tcp://pool.tdcoincore.org"
+            android:contentDescription="@string/srv_input_desc"
+            android:text="@string/srv_input_txt"
             android:textAlignment="center"
             android:textSize="14sp"
             android:textStyle="bold"
@@ -50,7 +51,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="9dp"
-            android:text="8334"
+            android:text="@string/srv_def_port"
             android:textAlignment="center"
             android:textSize="14sp"
             android:textStyle="bold"
@@ -68,12 +69,12 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
-        android:hint="Address (TCyfmdV7aaBwFK4tVXypSX3FqG3dmSSqac.android)"
+        android:hint="@string/addr_hint"
         android:inputType="textPersonName"
-        android:textSize="14sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextServer" />
+        app:layout_constraintTop_toBottomOf="@+id/cl_server" />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -83,7 +84,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
-        android:hint="Password (for exampe 'x')"
+        android:hint="@string/pass_hint"
         android:inputType="textPersonName"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -98,7 +99,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
-        android:hint="Threads (auto: 0 or empty)"
+        android:hint="@string/thr_hint"
         android:inputType="number"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -108,7 +109,6 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="71dp">
-
         <Button
             android:id="@+id/buttonDrive"
             android:layout_width="wrap_content"
@@ -117,7 +117,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="2dp"
             android:layout_marginBottom="8dp"
-            android:text="Start"
+            android:text="@string/btn_start_cap"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/checkBoxBenchmark"
             app:layout_constraintStart_toStartOf="parent"
@@ -129,7 +129,7 @@
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:text="Benchmark"
+            android:text="@string/bnch_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/spinnerAlgorithm"
             app:layout_constraintStart_toEndOf="@+id/buttonDrive"

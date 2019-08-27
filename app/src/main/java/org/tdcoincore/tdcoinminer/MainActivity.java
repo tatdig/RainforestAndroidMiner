@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
     private Spinner spinnerAlgorithm;
     private TextView textViewLog;
 
-
     private boolean running;
     private BlockingQueue<String> logs = new LinkedBlockingQueue<>(LOG_LINES);
 
@@ -85,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 storeSetting();
             }
         }); */
+
         //editTextServer.setEnabled(false);
         editTextUser = (EditText) findViewById(R.id.editTextUser);
         editTextUser.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -184,7 +184,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void changeState(boolean running) {
-        buttonDrive.setText(running ? "Stop" : "Start");
+        String strt = getResources().getString(R.string.btn_start_cap);
+        String stp = getResources().getString(R.string.btn_stop_cap);
+        buttonDrive.setText(running ? stp : strt);
         disableSetting(running);
         this.running = running;
     }

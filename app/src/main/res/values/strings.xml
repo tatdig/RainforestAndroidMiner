@@ -4,4 +4,13 @@
         <item>sha256d</item>
         <item>scrypt</item>
     </string-array>
+    <string name="srv_input_txt" translatable="false">stratum+tcp://pool.tdcoincore.org</string>
+    <string name="srv_input_desc">Server address</string>
+    <string name="srv_def_port" translatable="false">8333</string>
+    <string name="addr_hint">Address (TCyfmdV7aaBwFK4tVXypSX3FqG3dmSSqac.android)</string>
+    <string name="pass_hint">Password (for example \'x\')</string>
+    <string name="thr_hint">Threads (auto: 0 or empty)</string>
+    <string name="btn_start_cap">Start</string>
+    <string name="btn_stop_cap">Stop</string>
+    <string name="bnch_text">Benchmark</string>
 </resources>

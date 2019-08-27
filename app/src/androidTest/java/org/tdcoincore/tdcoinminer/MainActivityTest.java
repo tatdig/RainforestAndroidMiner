@@ -4,7 +4,7 @@ package org.tdcoincore.tdcoinminer;
 import android.support.test.espresso.ViewInteraction;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
-import android.test.suitebuilder.annotation.LargeTest;
+import android.support.test.filters.LargeTest;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -80,7 +80,7 @@ public class MainActivityTest {
                                         0),
                                 5),
                         isDisplayed()));
-        textView.check(matches(withText(containsString("miner threads started, using 'rainforest' algorithm."))));
+        textView.check(matches(withText(containsString("miner threads started, using 'scrypt' algorithm."))));
     }
 
     private static Matcher<View> childAtPosition(
